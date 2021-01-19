@@ -25,9 +25,9 @@ def import_excel(excel_file):
         array['question_diffculty'] = table.cell_value(rown,5)
         if table.cell_value(rown,0) == '单选题':
             single_tables.append(array)
-            single_number++
+            single_number+=1
         if table.cell_value(rown,0) == '多选题':
             multi_tables.append(array)
-            multi_number++
+            multi_number+=1
     return single_tables,multi_tables,single_number,multi_number
 

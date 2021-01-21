@@ -10,3 +10,4 @@ def client_question_recv():
     udp_socket_question_recv.bind(("",7788))
     recv_data = udp_socket_question_recv.recvfrom(1024)
     print(recv_data[0].decode("utf-8"))
+

@@ -19,10 +19,11 @@ def single_question_send(send_packing_data,send_ip,send_port=7788):
     udp_socket_single_question_send.sendto(send_packing_data.encode("utf-8"),(send_ip,send_port))
 
 #综合题目的发送函数 ：发送时需要给题目加一个编号，当收到对应的编号的反馈时，才会发送下一个问题。
-def sum_question_send(send_repo):
+def sum_question_send(send_repo,usr):
     question_num = 1
     tem = question_packing(question_num,send_repo[question_num-1]["question_type"],send_repo[question_num-1]["question"],send_repo[question_num-1]["question_choice"])
-    send_ip,send_port = server_user_register_and_login.getID()
+    send_ip= server_user_register_and_login.getID(usr)
+    send_port = 7788 
     single_question_send(tem,send_ip,send_port)
     question_num += 1
     while question_num<10 :

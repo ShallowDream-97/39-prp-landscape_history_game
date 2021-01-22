@@ -1,13 +1,12 @@
 #本文件用来采集答案，并发送给服务端
 
 import socket
-
+import client_get_host
 
 #一个简单的输入输出采集函数用来获取答案的字符串格式
 def get_answer():
     answer = input("请输入你的答案（使用小写字母，多选请用逗号隔开答案）：")
     return answer
-
 
 
 #此函数用来发送答案给服务器

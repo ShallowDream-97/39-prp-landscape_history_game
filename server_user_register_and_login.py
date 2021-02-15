@@ -17,7 +17,7 @@ def usr_msg_receive():
 
 #函数usr_update能够实现用户信息的添加和更新，如果用户是第一次登陆，则直接添加key是用户名的信息，如果不是，则更新
 def add_usr(usr,ip):
-    global usr_list
+    global usr_list   #把usr_list声明为全局变量
     usr_list[usr] = ip
 
 
